@@ -1,0 +1,116 @@
+---
+const certificates = [
+  {
+    title: "Google IT Support Professional Certificate",
+    issuer: "Google (Coursera)",
+    date: "2025",
+    credentialUrl: "#"
+  },
+  {
+    title: "Responsive Web Design",
+    issuer: "freeCodeCamp",
+    date: "2025",
+    credentialUrl: "#"
+  },
+  {
+    title: "Astro Front-End Developer Specialist",
+    issuer: "Astro Academy",
+    date: "2026",
+    credentialUrl: "#"
+  }
+];
+---
+
+<section id="certificates" class="certificates-section container animate-fade-up">
+  <div class="section-header">
+    <h2>Sertifikasi & <span class="text-gradient">Lisensi</span></h2>
+    <p>Penghargaan dan sertifikasi profesional yang telah saya raih.</p>
+  </div>
+
+  <div class="certificates-grid">
+    {certificates.map(cert => (
+      <div class="cert-card glass">
+        <div class="cert-badge">🏆</div>
+        <div class="cert-content">
+          <h3>{cert.title}</h3>
+          <p class="issuer">{cert.issuer}</p>
+          <p class="date">Diterbitkan: {cert.date}</p>
+          <a href={cert.credentialUrl} class="btn-outline btn-sm mt-4" target="_blank" rel="noopener noreferrer">Lihat Kredensial</a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .certificates-section {
+    padding: 100px 24px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+
+  .section-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+  }
+
+  .certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+  }
+
+  .cert-card {
+    display: flex;
+    gap: 20px;
+    padding: 32px;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+  }
+
+  .cert-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-neon);
+    box-shadow: 0 10px 30px -10px var(--accent-neon);
+  }
+
+  .cert-badge {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  .cert-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+
+  .issuer {
+    color: var(--accent-neon);
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+  }
+
+  .date {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+
+  .btn-sm {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    text-align: center;
+    width: max-content;
+    display: inline-block;
+  }
+</style>
