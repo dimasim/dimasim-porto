@@ -1,0 +1,65 @@
+---
+---
+<footer class="footer">
+  <div class="container footer-content glass">
+    <div class="footer-info">
+      <h3>Portofolio.</h3>
+      <p>Dibuat dengan ❤️ menggunakan Astro & Vanilla CSS</p>
+    </div>
+    <div class="social-links">
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Twitter</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: 60px 24px 24px;
+  }
+
+  .footer-content {
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, var(--accent-neon), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .footer-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 16px;
+  }
+
+  .social-links a {
+    color: var(--text-main);
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .social-links a:hover {
+    color: var(--accent-neon);
+  }
+
+  @media (max-width: 600px) {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

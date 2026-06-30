@@ -1,0 +1,137 @@
+---
+---
+<section class="hero container">
+  <div class="hero-content animate-fade-up">
+    <p class="greeting">👋 Halo, Saya</p>
+    <h1 class="title">Seorang <span class="text-gradient">IT Enthusiast</span> & Developer.</h1>
+    <p class="subtitle">Membangun pengalaman web yang keren, interaktif, dan modern. Saya fokus pada frontend development dan desain UI/UX yang premium.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-primary">Lihat Karya Saya</a>
+      <a href="#contact" class="btn-outline">Hubungi Saya</a>
+    </div>
+  </div>
+  
+  <div class="hero-visual animate-fade-up" style="animation-delay: 0.2s;">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="glass glass-card">
+      <code>
+        const dev = {<br>
+        &nbsp;&nbsp;name: "Anak IT",<br>
+        &nbsp;&nbsp;skills: ["Astro", "CSS", "JS"],<br>
+        &nbsp;&nbsp;passion: "Creating awesome UI"<br>
+        };
+      </code>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 100px;
+    gap: 40px;
+  }
+
+  .hero-content {
+    flex: 1;
+    max-width: 600px;
+  }
+
+  .greeting {
+    font-size: 1.2rem;
+    color: var(--accent-neon);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .title {
+    font-size: 4rem;
+    margin-bottom: 24px;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+  }
+
+  .hero-visual {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+  }
+
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+  }
+
+  .orb-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--accent-purple);
+    top: 0;
+    right: 10%;
+    opacity: 0.5;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .orb-2 {
+    width: 250px;
+    height: 250px;
+    background: var(--accent-neon);
+    bottom: 0;
+    left: 10%;
+    opacity: 0.5;
+    animation: float 8s ease-in-out infinite reverse;
+  }
+
+  .glass-card {
+    padding: 32px;
+    font-family: monospace;
+    font-size: 1.1rem;
+    color: var(--accent-neon);
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease;
+  }
+
+  .glass-card:hover {
+    transform: rotate(0deg) scale(1.05);
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+  }
+
+  @media (max-width: 968px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+      padding-top: 150px;
+    }
+    
+    .hero-actions {
+      justify-content: center;
+    }
+    
+    .title {
+      font-size: 3rem;
+    }
+  }
+</style>

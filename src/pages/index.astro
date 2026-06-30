@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Skills from '../components/Skills.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Footer from '../components/Footer.astro';
+
+// Data Mockup untuk Projects
+const projects = [
+  {
+    title: "Sistem Manajemen Inventaris",
+    description: "Aplikasi web berbasis React dan Node.js untuk melacak barang masuk dan keluar di gudang. Dilengkapi fitur dashboard analitik real-time.",
+    tags: ["React", "Node.js", "Express", "MongoDB"],
+    link: "#"
+  },
+  {
+    title: "Aplikasi Kasir (POS) Cloud",
+    description: "Sistem Point of Sales modern yang disinkronisasi ke cloud, mendukung multi-cabang dan laporan penjualan otomatis.",
+    tags: ["Vue.js", "Firebase", "Tailwind CSS"],
+    link: "#"
+  },
+  {
+    title: "E-Commerce Gadget Keren",
+    description: "Toko online responsif dengan integrasi payment gateway dan sistem keranjang belanja interaktif.",
+    tags: ["Next.js", "Stripe", "Prisma", "PostgreSQL"],
+    link: "#"
+  }
+];
+---
+
+<Layout title="IT Portofolio | Keren & Modern">
+  <Navbar />
+  
+  <main>
+    <Hero />
+    
+    <Skills />
+
+    <section id="projects" class="projects-section container animate-fade-up">
+      <div class="section-header">
+        <h2>Karya <span class="text-gradient">Terbaik</span></h2>
+        <p>Beberapa proyek IT yang pernah saya kerjakan.</p>
+      </div>
+      
+      <div class="projects-grid">
+        {projects.map(project => (
+          <ProjectCard 
+            title={project.title}
+            description={project.description}
+            tags={project.tags}
+            link={project.link}
+          />
+        ))}
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .projects-section {
+    padding: 100px 24px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+
+  .section-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+  }
+</style>

@@ -1,0 +1,66 @@
+---
+---
+<nav class="navbar glass">
+  <div class="container nav-container">
+    <a href="#" class="logo text-gradient">Portofolio.</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+    <a href="#contact" class="btn-outline btn-sm">Contact Me</a>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    z-index: 1000;
+    padding: 16px 24px;
+    border-radius: 9999px; /* Pill shape */
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--accent-neon);
+  }
+
+  .btn-sm {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  }
+</style>

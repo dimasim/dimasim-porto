@@ -1,0 +1,81 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  tags: string[];
+  link: string;
+}
+
+const { title, description, tags, link } = Astro.props;
+---
+<div class="project-card glass">
+  <div class="project-content">
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <div class="tags">
+      {tags.map(tag => (
+        <span class="tag">{tag}</span>
+      ))}
+    </div>
+    <a href={link} class="btn-outline btn-sm mt-4" target="_blank" rel="noopener noreferrer">Lihat Detail</a>
+  </div>
+</div>
+
+<style>
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-purple);
+    box-shadow: 0 10px 30px -10px var(--accent-purple);
+  }
+
+  .project-content {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: #fff;
+  }
+
+  p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+    flex: 1;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .tag {
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    background: rgba(14, 165, 233, 0.1);
+    color: var(--accent-neon);
+    border-radius: 9999px;
+    border: 1px solid rgba(14, 165, 233, 0.2);
+  }
+
+  .btn-sm {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    text-align: center;
+    width: max-content;
+  }
+</style>
