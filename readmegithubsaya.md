@@ -28,7 +28,7 @@ fun_fact: I debug with print() and I'm not ashamed
 - 👯 Open to collaborate on **Web Development** projects
 - 🤝 Actively seeking an **ICT Internship Partner**
 - 💬 Ask me about anything — web dev, electronics, or college life
-- 📫 Reach me at **[officialdimasim@gmail.com](mailto:officialdimasim@gmail.com)**
+- 📫 Reach me via WhatsApp: **[+62 858-9287-3353](https://wa.me/6285892873353)**
 
 <br/>
 
@@ -106,8 +106,8 @@ fun_fact: I debug with print() and I'm not ashamed
   <a href="https://www.linkedin.com/in/dimas-irsyad-maulana-b551361a4/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=LinkedIn&logoColor=white" alt="LinkedIn" />
   </a>&nbsp;
-  <a href="mailto:officialdimasim@gmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/Gmail-%23D14836.svg?style=for-the-badge&logo=Gmail&logoColor=white" alt="Gmail" />
+  <a href="https://wa.me/6285892873353" target="_blank">
+    <img src="https://img.shields.io/badge/WhatsApp-%2325D366.svg?style=for-the-badge&logo=WhatsApp&logoColor=white" alt="WhatsApp" />
   </a>
 </p>
 
