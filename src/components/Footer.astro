@@ -1,66 +1,242 @@
 ---
 ---
-<footer class="footer">
-  <div class="container footer-content glass">
-    <div class="footer-info">
-      <h3>Portofolio.</h3>
-      <p>Dibuat dengan ❤️ menggunakan Astro & Vanilla CSS</p>
+<footer class="footer" id="contact">
+  <div class="container">
+    <!-- Contact Card CTA -->
+    <div class="contact-cta glass animate-fade-up">
+      <div class="cta-content">
+        <span class="cta-tag">Mari Terhubung & Berkolaborasi</span>
+        <h2>Tertarik untuk Bekerja Sama atau Berdiskusi?</h2>
+        <p>
+          Saya selalu terbuka untuk peluang karir Software Engineering, Full-Stack Web Development, proyek freelance, atau diskusi seputar sistem terdistribusi.
+        </p>
+      </div>
+
+      <div class="cta-actions">
+        <a href="mailto:officialdimasim@gmail.com" class="btn-primary">
+          <span>✉️ Kirim Email</span>
+        </a>
+        <a href="https://wa.me/6285892873353" target="_blank" rel="noopener noreferrer" class="btn-outline">
+          <span>💬 Chat WhatsApp</span>
+        </a>
+        <a href="/CERTIFICATE/CV dimas.pdf" download="CV_Dimas_Irsyad_Maulana.pdf" target="_blank" rel="noopener noreferrer" class="btn-outline">
+          <span>📥 Unduh CV (PDF)</span>
+        </a>
+      </div>
     </div>
-    <div class="social-links">
-      <a href="https://github.com/dimasim" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/dimas-irsyad-maulana-b551361a4/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://www.instagram.com/__dimasim" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <a href="https://wa.me/6285892873353" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+
+    <!-- Footer Main Info -->
+    <div class="footer-bottom glass">
+      <div class="footer-brand">
+        <h3 class="logo"><span class="text-gradient">dimasim</span><span class="logo-dot">.</span></h3>
+        <p class="brand-desc">
+          Dimas Irsyad Maulana — Full-Stack Web Developer & Computer Engineering Graduate (Polines). Berdomisili di Semarang, Indonesia.
+        </p>
+        <div class="contact-direct">
+          <a href="mailto:officialdimasim@gmail.com" class="direct-item">
+            📧 officialdimasim@gmail.com
+          </a>
+          <a href="https://wa.me/6285892873353" target="_blank" rel="noopener noreferrer" class="direct-item">
+            📱 +62 858 9287 3353
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-links-group">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#experience">Pengalaman</a></li>
+          <li><a href="#skills">Keahlian</a></li>
+          <li><a href="#projects">Proyek</a></li>
+          <li><a href="#certificates">Sertifikasi</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social-group">
+        <h4>Sosial & Profil</h4>
+        <div class="social-pills">
+          <a href="https://github.com/dimasim" target="_blank" rel="noopener noreferrer" class="social-pill">
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/dimas-irsyad-maulana-b551361a4/" target="_blank" rel="noopener noreferrer" class="social-pill">
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://www.instagram.com/__dimasim" target="_blank" rel="noopener noreferrer" class="social-pill">
+            <span>Instagram</span>
+          </a>
+          <a href="https://dimasim-portofolio.vercel.app/" target="_blank" rel="noopener noreferrer" class="social-pill">
+            <span>Live Portfolio</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <p>© {new Date().getFullYear()} Dimas Irsyad Maulana. Dikembangkan dengan ❤️ menggunakan Astro & Vanilla CSS.</p>
     </div>
   </div>
 </footer>
 
 <style>
   .footer {
-    padding: 60px 24px 24px;
+    padding: 80px 24px 30px;
+    position: relative;
   }
 
-  .footer-content {
-    padding: 32px;
+  .contact-cta {
+    padding: 48px;
+    border-radius: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 24px;
+    gap: 36px;
+    margin-bottom: 50px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.85));
   }
 
-  .footer-info h3 {
-    font-size: 1.5rem;
+  .cta-tag {
+    font-size: 0.8rem;
+    color: var(--accent-neon);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
     margin-bottom: 8px;
-    background: linear-gradient(90deg, var(--accent-neon), var(--accent-purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    display: inline-block;
   }
 
-  .footer-info p {
+  .cta-content h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  .cta-content p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 580px;
+    line-height: 1.6;
+  }
+
+  .cta-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 200px;
+  }
+
+  .footer-bottom {
+    padding: 40px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 40px;
+  }
+
+  .footer-brand .logo {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .logo-dot {
+    color: var(--accent-purple);
+  }
+
+  .brand-desc {
     color: var(--text-muted);
     font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 380px;
   }
 
-  .social-links {
+  .contact-direct {
     display: flex;
-    gap: 16px;
+    flex-direction: column;
+    gap: 8px;
   }
 
-  .social-links a {
-    color: var(--text-main);
-    font-weight: 500;
-    transition: color 0.3s ease;
+  .direct-item {
+    font-size: 0.85rem;
+    color: var(--accent-neon);
+    transition: color 0.2s ease;
   }
 
-  .social-links a:hover {
+  .direct-item:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  .footer-links-group h4,
+  .footer-social-group h4 {
+    font-size: 1.05rem;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  .footer-links-group ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links-group a {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+  }
+
+  .footer-links-group a:hover {
     color: var(--accent-neon);
   }
 
-  @media (max-width: 600px) {
-    .footer-content {
+  .social-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .social-pill {
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    transition: all 0.25s ease;
+  }
+
+  .social-pill:hover {
+    background: var(--accent-purple);
+    border-color: var(--accent-purple);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  .footer-copyright {
+    text-align: center;
+    margin-top: 36px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 868px) {
+    .contact-cta {
       flex-direction: column;
       text-align: center;
+      padding: 32px;
+    }
+
+    .cta-actions {
+      width: 100%;
+    }
+
+    .footer-bottom {
+      grid-template-columns: 1fr;
+      gap: 30px;
     }
   }
 </style>

@@ -2,24 +2,37 @@
 import '../styles/global.css';
 
 interface Props {
-  title: string;
+  title?: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { 
+  title = "Dimas Irsyad Maulana | Full-Stack Web Developer & Computer Engineering",
+  description = "Portofolio Dimas Irsyad Maulana - Full-Stack Web Developer & Mahasiswa Rekayasa Komputer Polines berpengalaman dalam PHP (Laravel), Go, MySQL/PostgreSQL, Docker, dan arsitektur sistem."
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Dimas Irsyad Maulana" />
+    <meta name="keywords" content="Dimas Irsyad Maulana, Full Stack Developer, Golang, Laravel, Docker, PostgreSQL, Polines, Semarang, Portfolio" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://dimasim-portofolio.vercel.app/" />
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <title>{title}</title>
   </head>
   <body>

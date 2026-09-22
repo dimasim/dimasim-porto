@@ -1,13 +1,39 @@
 ---
 ---
-<section class="hero container">
+<section class="hero container" id="home">
   <div class="hero-content animate-fade-up">
-    <p class="greeting">👋 Halo, Saya</p>
+    <div class="status-badge">
+      <span class="status-dot"></span>
+      <span>Tersedia untuk Peluang Kerja & Kolaborasi</span>
+    </div>
+    
+    <p class="greeting">Halo, Saya</p>
     <h1 class="title"><span class="text-gradient">Dimas Irsyad Maulana</span></h1>
-    <p class="subtitle">Mahasiswa Teknologi Rekayasa Komputer di Politeknik Negeri Semarang. Membangun pengalaman backend, frontend, & sistem yang modern.</p>
+    <h2 class="role">Full-Stack Web Developer & Computer Engineering Graduate</h2>
+    
+    <p class="subtitle">
+      Lulusan Teknologi Rekayasa Komputer di Politeknik Negeri Semarang dengan pengalaman langsung dalam full-stack web development, perancangan RESTful API, dan integrasi sistem. Terbiasa membangun modul enterprise, arsitektur microservices, dan otomasi workflow menggunakan <strong>PHP (Laravel)</strong>, <strong>Go (Golang)</strong>, <strong>MySQL/PostgreSQL</strong>, dan <strong>Docker</strong>.
+    </p>
+
+    <div class="quick-info">
+      <span class="info-item">📍 Semarang, Indonesia</span>
+      <span class="info-item">🎓 D4 TRK Polines (IPK 3.82)</span>
+      <span class="info-item">⚡ Backend & Systems</span>
+    </div>
+
     <div class="hero-actions">
-      <a href="#projects" class="btn-primary">Lihat Karya Saya</a>
-      <a href="https://wa.me/6285892873353" class="btn-outline" target="_blank" rel="noopener noreferrer">Hubungi Saya</a>
+      <a href="/CERTIFICATE/CV dimas.pdf" download="CV_Dimas_Irsyad_Maulana.pdf" class="btn-primary btn-cv" target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span>Unduh CV</span>
+      </a>
+      <a href="#projects" class="btn-outline">Lihat Proyek</a>
+      <a href="#contact" class="btn-outline">Hubungi Saya</a>
+      <a href="https://github.com/dimasim" target="_blank" rel="noopener noreferrer" class="btn-icon" title="GitHub Profile">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/dimas-irsyad-maulana-b551361a4/" target="_blank" rel="noopener noreferrer" class="btn-icon" title="LinkedIn Profile">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+      </a>
     </div>
   </div>
   
@@ -15,9 +41,20 @@
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     
-    <div class="profile-frame">
-      <!-- Taruh foto Anda di folder public dengan nama /images/profile.jpg -->
-      <img src="/images/profile.jpg" alt="Dimas Irsyad Maulana" class="profile-img" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=dimasim'" />
+    <div class="profile-card glass">
+      <div class="profile-frame">
+        <!-- Letakkan file foto di /public/images/profile.jpg. Jika belum ada, avatar otomatis aktif -->
+        <img 
+          src="/images/profile.jpg" 
+          alt="Dimas Irsyad Maulana" 
+          class="profile-img" 
+          onerror="this.onerror=null; this.src='https://api.dicebear.com/7.x/bottts/svg?seed=dimasim';" 
+        />
+      </div>
+      <div class="profile-badge">
+        <span class="badge-role">Full-Stack & DevOps</span>
+        <span class="badge-name">Dimas Irsyad M.</span>
+      </div>
     </div>
   </div>
 </section>
@@ -33,40 +70,121 @@
   }
 
   .hero-content {
-    flex: 1;
-    max-width: 600px;
+    flex: 1.2;
+    max-width: 650px;
+  }
+
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    background: rgba(14, 165, 233, 0.1);
+    border: 1px solid rgba(14, 165, 233, 0.25);
+    color: var(--accent-neon);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #10b981;
+    display: inline-block;
   }
 
   .greeting {
     font-size: 1.2rem;
-    color: var(--accent-neon);
-    margin-bottom: 16px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
     font-weight: 500;
   }
 
   .title {
-    font-size: 4rem;
-    margin-bottom: 24px;
+    font-size: 3.5rem;
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+
+  .role {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--accent-purple);
+    margin-bottom: 20px;
   }
 
   .subtitle {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--text-muted);
-    margin-bottom: 40px;
+    margin-bottom: 24px;
+    line-height: 1.7;
+  }
+
+  .subtitle strong {
+    color: #e2e8f0;
+  }
+
+  .quick-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .info-item {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--text-main);
   }
 
   .hero-actions {
     display: flex;
-    gap: 16px;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn-cv {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 20px rgba(14, 165, 233, 0.35);
+  }
+
+  .btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+  }
+
+  .btn-icon:hover {
+    color: #fff;
+    border-color: var(--accent-neon);
+    transform: translateY(-2px);
+    background: rgba(14, 165, 233, 0.15);
   }
 
   .hero-visual {
-    flex: 1;
+    flex: 0.8;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 400px;
+    min-height: 420px;
   }
 
   .orb {
@@ -77,36 +195,23 @@
   }
 
   .orb-1 {
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
     background: var(--accent-purple);
     top: 0;
     right: 10%;
-    opacity: 0.5;
+    opacity: 0.45;
     animation: float 6s ease-in-out infinite;
   }
 
   .orb-2 {
-    width: 250px;
-    height: 250px;
+    width: 240px;
+    height: 240px;
     background: var(--accent-neon);
     bottom: 0;
     left: 10%;
-    opacity: 0.5;
+    opacity: 0.45;
     animation: float 8s ease-in-out infinite reverse;
-  }
-
-  .glass-card {
-    padding: 32px;
-    font-family: monospace;
-    font-size: 1.1rem;
-    color: var(--accent-neon);
-    transform: rotate(-2deg);
-    transition: transform 0.3s ease;
-  }
-
-  .glass-card:hover {
-    transform: rotate(0deg) scale(1.05);
   }
 
   @keyframes float {
@@ -115,53 +220,80 @@
     100% { transform: translateY(0px); }
   }
 
-  .profile-container {
+  .profile-card {
+    padding: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
-    z-index: 1;
+    gap: 16px;
+    border-radius: 28px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .profile-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -10px rgba(139, 92, 246, 0.3);
   }
 
   .profile-frame {
-    width: 280px;
-    height: 360px;
-    border-radius: 24px;
-    padding: 4px;
+    width: 260px;
+    height: 320px;
+    border-radius: 20px;
+    padding: 3px;
     background: linear-gradient(135deg, var(--accent-neon), var(--accent-purple));
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-
-  .profile-frame:hover {
-    transform: scale(1.03) rotate(2deg);
   }
 
   .profile-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px;
-    background: var(--bg-dark);
+    border-radius: 18px;
+    background: #1e293b;
+  }
+
+  .profile-badge {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .badge-role {
+    font-size: 0.8rem;
+    color: var(--accent-neon);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  .badge-name {
+    font-size: 0.95rem;
+    color: #fff;
+    font-weight: 600;
   }
 
   @media (max-width: 968px) {
     .hero {
       flex-direction: column;
       text-align: center;
-      padding-top: 150px;
+      padding-top: 130px;
+      gap: 50px;
     }
     
-    .hero-actions {
+    .hero-content {
+      max-width: 100%;
+    }
+
+    .hero-actions, .quick-info {
       justify-content: center;
     }
     
     .title {
-      font-size: 3rem;
+      font-size: 2.8rem;
     }
   }
 </style>

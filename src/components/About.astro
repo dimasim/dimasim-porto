@@ -1,0 +1,272 @@
+---
+---
+<section id="about" class="about-section container animate-fade-up">
+  <div class="section-header">
+    <h2>Tentang <span class="text-gradient">Saya</span></h2>
+    <p>Profil profesional, latar belakang akademik, dan dedikasi di bidang teknologi.</p>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-bio glass">
+      <div class="bio-header">
+        <span class="bio-tag">Summary & Visi</span>
+        <h3>Membangun Sistem Andal yang Efisien & Skalabel</h3>
+      </div>
+      <p>
+        Saya adalah seorang <strong>Software Engineer & Lulusan Teknologi Rekayasa Komputer</strong> dari <strong>Politeknik Negeri Semarang (Polines)</strong> dengan ketertarikan mendalam pada full-stack web development, backend systems, serta arsitektur cloud dan containerization.
+      </p>
+      <p>
+        Dengan fondasi kuat dalam <strong>PHP (Laravel)</strong>, <strong>Go (Golang)</strong>, dan database relational (MySQL / PostgreSQL), saya terbiasa mengembangkan aplikasi berskala enterprise, modul perizinan terotomasi, modul finansial, hingga penelitian terapan seperti auto-scaling microservices berbasis AI (LSTM).
+      </p>
+
+      <div class="metrics-row">
+        <div class="metric-card">
+          <span class="metric-val">3.82</span>
+          <span class="metric-label">IPK Polines (Skala 4.00)</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-val">8+</span>
+          <span class="metric-label">Sertifikasi Resmi</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-val">3+</span>
+          <span class="metric-label">Tahun Pengalaman Hands-on</span>
+        </div>
+      </div>
+
+      <div class="about-cv-action">
+        <a href="/CERTIFICATE/CV dimas.pdf" download="CV_Dimas_Irsyad_Maulana.pdf" class="btn-primary btn-cv-about" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Unduh CV Lengkap (PDF)</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="education-container">
+      <h3 class="edu-title">Riwayat Pendidikan</h3>
+      
+      <div class="edu-card glass">
+        <div class="edu-icon">🎓</div>
+        <div class="edu-details">
+          <div class="edu-header">
+            <h4>Politeknik Negeri Semarang</h4>
+            <span class="edu-year">Sept 2022 – Sept 2026</span>
+          </div>
+          <p class="edu-degree">Sarjana Terapan (D4) Teknologi Rekayasa Komputer</p>
+          <div class="edu-badge">IPK: <strong>3.82</strong> dari 4.00</div>
+          <p class="edu-desc">Fokus pada rekayasa perangkat lunak, sistem terdistribusi, jaringan komputer, database, serta optimasi microservices.</p>
+        </div>
+      </div>
+
+      <div class="edu-card glass">
+        <div class="edu-icon">🏫</div>
+        <div class="edu-details">
+          <div class="edu-header">
+            <h4>SMKN 7 Semarang</h4>
+            <span class="edu-year">Mei 2018 – Mei 2022</span>
+          </div>
+          <p class="edu-degree">Sistem Informatika, Jaringan, dan Aplikasi (SIJA)</p>
+          <div class="edu-badge">Nilai Akhir: <strong>86.93</strong> dari 100.00</div>
+          <p class="edu-desc">Fondasi kuat dalam administrasi Linux server, konfigurasi jaringan komputer, arsitektur TCP/IP, dan web programming dasar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    padding: 80px 24px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+  }
+
+  .section-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 32px;
+    align-items: stretch;
+  }
+
+  .about-bio {
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .bio-tag {
+    font-size: 0.8rem;
+    color: var(--accent-neon);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .bio-header h3 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  .about-bio p {
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .about-bio strong {
+    color: #f1f5f9;
+  }
+
+  .metrics-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--glass-border);
+  }
+
+  .metric-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .metric-val {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--accent-neon);
+  }
+
+  .metric-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .about-cv-action {
+    margin-top: 24px;
+    display: flex;
+  }
+
+  .btn-cv-about {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    box-shadow: 0 6px 20px rgba(14, 165, 233, 0.25);
+  }
+
+  .education-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .edu-title {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  .edu-card {
+    padding: 24px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .edu-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-purple);
+  }
+
+  .edu-icon {
+    font-size: 2.2rem;
+    line-height: 1;
+  }
+
+  .edu-details {
+    flex: 1;
+  }
+
+  .edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .edu-header h4 {
+    font-size: 1.15rem;
+    color: #fff;
+  }
+
+  .edu-year {
+    font-size: 0.8rem;
+    color: var(--accent-neon);
+    background: rgba(14, 165, 233, 0.1);
+    padding: 2px 10px;
+    border-radius: 9999px;
+  }
+
+  .edu-degree {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .edu-badge {
+    font-size: 0.85rem;
+    color: #e2e8f0;
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+
+  .edu-badge strong {
+    color: #a78bfa;
+  }
+
+  .edu-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 868px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .metrics-row {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+</style>

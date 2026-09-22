@@ -1,90 +1,371 @@
 ---
+const proficientSkills = [
+  { 
+    name: "Go (Golang)", 
+    desc: "High-performance backend services & concurrent systems", 
+    icon: "https://cdn.simpleicons.org/go", 
+    color: "#00ADD8",
+    category: "Backend Language" 
+  },
+  { 
+    name: "PHP (Laravel)", 
+    desc: "Enterprise web apps, RESTful API, Eloquent ORM & Blade", 
+    icon: "https://cdn.simpleicons.org/laravel", 
+    color: "#FF2D20",
+    category: "Web Framework" 
+  },
+  { 
+    name: "Docker", 
+    desc: "Containerization, multi-stage builds & environment isolation", 
+    icon: "https://cdn.simpleicons.org/docker", 
+    color: "#2496ED",
+    category: "DevOps & Containers" 
+  },
+  { 
+    name: "PostgreSQL", 
+    desc: "Advanced relational DB, complex indexing & performance tuning", 
+    icon: "https://cdn.simpleicons.org/postgresql", 
+    color: "#4169E1",
+    category: "Relational Database" 
+  },
+  { 
+    name: "MySQL", 
+    desc: "Database schema design, transactions & high-volume queries", 
+    icon: "https://cdn.simpleicons.org/mysql", 
+    color: "#4479A1",
+    category: "Relational Database" 
+  },
+  { 
+    name: "Linux Server", 
+    desc: "Server administration, DNS setup, systemd & bash scripting", 
+    icon: "https://cdn.simpleicons.org/linux/white", 
+    color: "#FCC624",
+    category: "Operating System" 
+  },
+  { 
+    name: "Git", 
+    desc: "Version control, branching strategies & team collaboration", 
+    icon: "https://cdn.simpleicons.org/git", 
+    color: "#F05032",
+    category: "Version Control" 
+  }
+];
+
+const modernEcosystem = [
+  // Languages & Frameworks
+  { name: "Node.js", category: "Runtime", icon: "https://cdn.simpleicons.org/nodedotjs", color: "#5FA04E" },
+  { name: "NestJS", category: "Framework", icon: "https://cdn.simpleicons.org/nestjs", color: "#E0234E" },
+  { name: "Python", category: "Language / AI", icon: "https://cdn.simpleicons.org/python", color: "#3776AB" },
+  { name: "React.js", category: "Frontend", icon: "https://cdn.simpleicons.org/react", color: "#61DAFB" },
+  { name: "Flutter", category: "Mobile Dev", icon: "https://cdn.simpleicons.org/flutter", color: "#02569B" },
+
+  // Databases & In-Memory
+  { name: "Redis", category: "In-Memory Cache", icon: "https://cdn.simpleicons.org/redis", color: "#FF4438" },
+
+  // DevOps & Cloud
+  { name: "Podman", category: "Container Engine", icon: "https://cdn.simpleicons.org/podman", color: "#892CA0" },
+  { name: "Ansible", category: "Automation & IaC", icon: "https://cdn.simpleicons.org/ansible", color: "#EE0000" },
+  { name: "Terraform", category: "Infrastructure as Code", icon: "https://cdn.simpleicons.org/terraform", color: "#844FBA" },
+  { name: "Google Cloud", category: "Cloud Platform", icon: "https://cdn.simpleicons.org/googlecloud", color: "#4285F4" },
+
+  // Observability & Quality Assurance
+  { name: "Prometheus", category: "Metrics Monitoring", icon: "https://cdn.simpleicons.org/prometheus", color: "#E6522C" },
+  { name: "Grafana", category: "Data Visualization", icon: "https://cdn.simpleicons.org/grafana", color: "#F46800" },
+  { name: "k6", category: "Load Testing", icon: "https://cdn.simpleicons.org/k6", color: "#7D64FF" },
+  { name: "Playwright", category: "E2E Testing", icon: "https://cdn.simpleicons.org/playwright", color: "#2EAD33" }
+];
 ---
+
 <section id="skills" class="skills-section container animate-fade-up">
   <div class="section-header">
-    <h2>Tech <span class="text-gradient">Stack</span></h2>
-    <p>Teknologi dan alat yang sering saya gunakan.</p>
+    <h2>Tech Stack & <span class="text-gradient">Keahlian</span></h2>
+    <p>Teknologi dan perangkat lunak yang saya kuasai dalam perancangan aplikasi, sistem terdistribusi, dan DevOps.</p>
   </div>
-  
-  <div class="skills-grid">
-    <div class="skill-item glass">
-      <div class="icon">🚀</div>
-      <h3>Astro</h3>
-      <p>Web framework super cepat</p>
+
+  <div class="skills-wrapper">
+    <!-- Section 1: Proficient Tech Stack -->
+    <div class="skills-block">
+      <div class="block-header">
+        <span class="badge-proficient">Utama & Mendalam</span>
+        <h3>Proficient Tech Stack</h3>
+        <p class="block-sub">Keahlian inti dengan jam terbang tinggi untuk backend, database, dan containerization.</p>
+      </div>
+
+      <div class="proficient-grid">
+        {proficientSkills.map(skill => (
+          <div class="proficient-card glass">
+            <div class="card-icon-wrap" style={`--brand-color: ${skill.color};`}>
+              <img src={skill.icon} alt={skill.name} class="tech-svg" loading="lazy" />
+            </div>
+            <div class="card-info">
+              <span class="skill-category">{skill.category}</span>
+              <h4>{skill.name}</h4>
+              <p>{skill.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-    <div class="skill-item glass">
-      <div class="icon">🐹</div>
-      <h3>Go (Golang)</h3>
-      <p>Bahasa backend tangguh & cepat</p>
-    </div>
-    <div class="skill-item glass">
-      <div class="icon">🐳</div>
-      <h3>Docker</h3>
-      <p>Containerisasi & Deployment</p>
-    </div>
-    <div class="skill-item glass">
-      <div class="icon">⚡</div>
-      <h3>JavaScript</h3>
-      <p>Interaktivitas & Logika Web</p>
-    </div>
-    <div class="skill-item glass">
-      <div class="icon">📦</div>
-      <h3>Node.js</h3>
-      <p>Backend & Tooling</p>
+
+    <!-- Section 2: Tools, Cloud & Modern Ecosystem -->
+    <div class="skills-block mt-16">
+      <div class="block-header">
+        <span class="badge-familiar">Familiar & Exposure</span>
+        <h3>Tools, Cloud & Modern Ecosystem</h3>
+        <p class="block-sub">Framework pendukung, platform cloud, observabilitas sistem, dan automated testing.</p>
+      </div>
+
+      <div class="ecosystem-grid">
+        {modernEcosystem.map(tech => (
+          <div class="ecosystem-card glass" style={`--brand-color: ${tech.color};`}>
+            <div class="glow-bg"></div>
+            <div class="eco-icon-box">
+              <img src={tech.icon} alt={tech.name} class="eco-svg" loading="lazy" />
+            </div>
+            <span class="eco-name">{tech.name}</span>
+            <span class="eco-category">{tech.category}</span>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </section>
 
 <style>
   .skills-section {
-    padding: 100px 24px;
+    padding: 60px 24px;
   }
 
   .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 36px;
   }
 
   .section-header h2 {
-    font-size: 2.5rem;
-    margin-bottom: 16px;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
   }
 
   .section-header p {
     color: var(--text-muted);
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 24px;
+  .mt-16 {
+    margin-top: 40px;
   }
 
-  .skill-item {
-    padding: 32px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .skill-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px -20px var(--accent-neon);
-    border-color: var(--accent-neon);
-  }
-
-  .icon {
-    font-size: 3rem;
+  .block-header {
     margin-bottom: 20px;
   }
 
-  .skill-item h3 {
+  .badge-proficient {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: var(--accent-neon);
+    background: rgba(14, 165, 233, 0.1);
+    padding: 4px 12px;
+    border-radius: 9999px;
+    border: 1px solid rgba(14, 165, 233, 0.25);
+    display: inline-block;
     margin-bottom: 8px;
-    font-size: 1.3rem;
   }
 
-  .skill-item p {
+  .badge-familiar {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: var(--accent-purple);
+    background: rgba(139, 92, 246, 0.1);
+    padding: 4px 12px;
+    border-radius: 9999px;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .block-header h3 {
+    font-size: 1.35rem;
+    color: #fff;
+    margin-bottom: 2px;
+  }
+
+  .block-sub {
+    font-size: 0.88rem;
     color: var(--text-muted);
-    font-size: 0.95rem;
+  }
+
+  /* --- Proficient Grid (Compact & Sleek) --- */
+  .proficient-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .proficient-card {
+    padding: 18px 20px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    border-radius: 14px;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .proficient-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-neon);
+    box-shadow: 0 8px 20px -8px rgba(14, 165, 233, 0.3);
+  }
+
+  .card-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .proficient-card:hover .card-icon-wrap {
+    transform: scale(1.08);
+    box-shadow: 0 0 14px var(--brand-color);
+  }
+
+  .tech-svg {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  .card-info {
+    flex: 1;
+  }
+
+  .skill-category {
+    font-size: 0.68rem;
+    color: var(--accent-neon);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .card-info h4 {
+    font-size: 1.05rem;
+    color: #fff;
+    margin-bottom: 2px;
+  }
+
+  .card-info p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  /* --- Modern Ecosystem Grid (Compact, Sleek & Well-proportioned) --- */
+  .ecosystem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+    gap: 12px;
+  }
+
+  .ecosystem-card {
+    position: relative;
+    padding: 14px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .glow-bg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 45px;
+    height: 45px;
+    background: var(--brand-color);
+    filter: blur(25px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .ecosystem-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: var(--brand-color);
+    box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.6);
+  }
+
+  .ecosystem-card:hover .glow-bg {
+    opacity: 0.3;
+  }
+
+  .eco-icon-box {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    z-index: 1;
+    transition: transform 0.25s ease;
+  }
+
+  .ecosystem-card:hover .eco-icon-box {
+    transform: scale(1.12);
+  }
+
+  .eco-svg {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  }
+
+  .eco-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin-bottom: 2px;
+    z-index: 1;
+    line-height: 1.2;
+    transition: color 0.2s ease;
+  }
+
+  .ecosystem-card:hover .eco-name {
+    color: #fff;
+  }
+
+  .eco-category {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    z-index: 1;
+  }
+
+  @media (max-width: 640px) {
+    .ecosystem-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .proficient-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

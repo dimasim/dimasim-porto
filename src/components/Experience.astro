@@ -1,0 +1,287 @@
+---
+const workExperiences = [
+  {
+    company: "Nore Inovasi",
+    location: "Semarang",
+    period: "Agustus – Desember 2025",
+    role: "Full Stack Web Developer (Intern)",
+    highlights: [
+      "Membangun aplikasi full-stack CRUD dengan fitur upload file, autentikasi user, serta ekspor data ke Excel & PDF menggunakan Laravel dan jQuery.",
+      "Mengembangkan modul ticketing internal untuk manajemen cuti, absensi/kehadiran, serta alur approval multi-tingkat (multi-tier) terintegrasi notifikasi otomatis WhatsApp dan Discord.",
+      "Mengembangkan modul finansial (jurnal umum, Chart of Accounts, payroll penggajian) serta dashboard statistik proyek untuk monitoring eksekutif dan pengambilan keputusan manajemen."
+    ],
+    tech: ["Laravel", "PHP", "jQuery", "MySQL", "WhatsApp API", "Discord Webhook", "Reporting"]
+  },
+  {
+    company: "IKITAS",
+    location: "Semarang",
+    period: "April – November 2020",
+    role: "Graphic Designer & Web Developer (Intern)",
+    highlights: [
+      "Mengembangkan situs web company profile responsif berbasis WordPress.",
+      "Mendesain aset visual pemasaran dan edukasi, termasuk brosur/flyer, konten feed Instagram, video bumper animasi, dan banner promosi."
+    ],
+    tech: ["WordPress", "UI/UX", "Graphic Design", "Content Creation"]
+  }
+];
+
+const organizationActivities = [
+  {
+    org: "Polytechnic Computer Club Polines (PCC)",
+    location: "Semarang",
+    role: "Staff Divisi Workshop",
+    period: "Mei 2024 – Mei 2025",
+    points: [
+      "Mengorganisasi workshop internal dan tingkat kampus di tiga domain teknologi: Multimedia, Software Engineering, dan Networking.",
+      "Mengevaluasi keahlian anggota dan menugaskan delegasi untuk mewakili organisasi dalam kompetisi IT tingkat regional maupun nasional.",
+      "Menyusun kurikulum Departemen Jaringan untuk meningkatkan kompetensi teknis dan kesiapan kompetisi anggota.",
+      "Bertindak sebagai Person in Charge (PIC) untuk Cyber CTF Jeopardy Competition di TECHCOMFEST 2025, mengelola koordinasi peserta/juri serta setup infrastruktur server lomba."
+    ]
+  },
+  {
+    org: "Polytechnic Computer Club Polines (PCC)",
+    location: "Semarang",
+    role: "Staff Departemen Network",
+    period: "Mei 2023 – Mei 2024",
+    points: [
+      "Menjadi instruktur dalam 2 workshop internal: \"Local DNS & Web Server Configuration in Linux\" dan \"Docker Fundamentals\".",
+      "Meningkatkan kompetensi teknis anggota di bidang networking melalui sesi pelatihan terstruktur.",
+      "Menyediakan dukungan teknis jaringan dan setup infrastruktur server untuk seluruh agenda kegiatan organisasi."
+    ]
+  }
+];
+---
+
+<section id="experience" class="experience-section container animate-fade-up">
+  <div class="section-header">
+    <h2>Pengalaman & <span class="text-gradient">Aktivitas</span></h2>
+    <p>Rekam jejak profesional dalam industri perangkat lunak serta kepemimpinan di organisasi kampus.</p>
+  </div>
+
+  <div class="exp-layout">
+    <!-- Work Experience Column -->
+    <div class="exp-column">
+      <div class="column-title">
+        <span class="icon">💼</span>
+        <h3>Pengalaman Kerja</h3>
+      </div>
+
+      <div class="timeline">
+        {workExperiences.map((job) => (
+          <div class="timeline-item glass">
+            <div class="timeline-marker"></div>
+            <div class="timeline-header">
+              <div>
+                <h4 class="job-company">{job.company}</h4>
+                <p class="job-role">{job.role}</p>
+              </div>
+              <div class="period-badge">
+                <span>{job.period}</span>
+                <small class="location">{job.location}</small>
+              </div>
+            </div>
+
+            <ul class="job-highlights">
+              {job.highlights.map(point => (
+                <li>{point}</li>
+              ))}
+            </ul>
+
+            <div class="tech-tags">
+              {job.tech.map(t => (
+                <span class="tag-pill">{t}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Organization Column -->
+    <div class="exp-column">
+      <div class="column-title">
+        <span class="icon">🏛️</span>
+        <h3>Aktivitas Organisasi</h3>
+      </div>
+
+      <div class="timeline">
+        {organizationActivities.map((act) => (
+          <div class="timeline-item glass">
+            <div class="timeline-marker org-marker"></div>
+            <div class="timeline-header">
+              <div>
+                <h4 class="job-company">{act.role}</h4>
+                <p class="job-role">{act.org}</p>
+              </div>
+              <div class="period-badge">
+                <span>{act.period}</span>
+                <small class="location">{act.location}</small>
+              </div>
+            </div>
+
+            <ul class="job-highlights">
+              {act.points.map(point => (
+                <li>{point}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience-section {
+    padding: 80px 24px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+  }
+
+  .section-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+  }
+
+  .exp-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .column-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .column-title .icon {
+    font-size: 1.5rem;
+  }
+
+  .column-title h3 {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+  }
+
+  .timeline-item {
+    padding: 28px;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .timeline-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-neon);
+  }
+
+  .timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .job-company {
+    font-size: 1.25rem;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  .job-role {
+    font-size: 0.95rem;
+    color: var(--accent-neon);
+    font-weight: 500;
+  }
+
+  .period-badge {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .period-badge span {
+    font-size: 0.8rem;
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.06);
+    padding: 4px 10px;
+    border-radius: 9999px;
+    border: 1px solid var(--glass-border);
+  }
+
+  .period-badge .location {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .job-highlights {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 18px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .job-highlights li {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .job-highlights li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-purple);
+    font-weight: bold;
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 16px;
+  }
+
+  .tag-pill {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    background: rgba(139, 92, 246, 0.1);
+    color: #c4b5fd;
+    border-radius: 6px;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+  }
+
+  @media (max-width: 968px) {
+    .exp-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .period-badge {
+      text-align: left;
+    }
+  }
+</style>

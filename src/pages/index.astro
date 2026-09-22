@@ -2,55 +2,91 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Experience from '../components/Experience.astro';
 import Skills from '../components/Skills.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import Certificates from '../components/Certificates.astro';
 import Footer from '../components/Footer.astro';
 
-// Data Mockup untuk Projects
+// Proyek Utama berdasarkan Dokumen CV Resmi Dimas Irsyad Maulana
+// Anda dapat menambahkan path gambar ke dalam folder public/images/ lalu isi properti 'image'
 const projects = [
   {
-    title: "Sistem Manajemen Inventaris",
-    description: "Aplikasi web berbasis React dan Node.js untuk melacak barang masuk dan keluar di gudang. Dilengkapi fitur dashboard analitik real-time.",
-    tags: ["React", "Node.js", "Express", "MongoDB"],
-    link: "#"
+    title: "Proactive Auto-Scaling Microservices Berbasis LSTM",
+    year: "2026",
+    category: "AI & Distributed Systems",
+    description: "Framework auto-scaling proaktif berbasis Multivariate LSTM (Quantile Loss) time-series forecasting untuk memprediksi lonjakan trafik dan menjaga kepatuhan SLA microservices secara dinamis.",
+    highlights: [
+      "Engineered a proactive auto-scaling framework leveraging Multivariate LSTM (Quantile Loss) time-series forecasting to dynamically maintain microservices SLA compliance.",
+      "Integrated real-time metric collection and load testing using Prometheus, HAProxy, and Grafana k6 to validate system scalability under peak traffic conditions."
+    ],
+    tags: ["Docker", "Prometheus", "HAProxy", "Python", "Grafana k6", "LSTM Time-Series"],
+    image: "", // Contoh: "/images/lstm-autoscaling.png"
+    link: "", // Isi URL Live Demo jika tersedia
+    github: "https://github.com/dimasim" // Ganti dengan link repository jika ada
   },
   {
-    title: "Aplikasi Kasir (POS) Cloud",
-    description: "Sistem Point of Sales modern yang disinkronisasi ke cloud, mendukung multi-cabang dan laporan penjualan otomatis.",
-    tags: ["Vue.js", "Firebase", "Tailwind CSS"],
-    link: "#"
+    title: "Aplikasi Web Psikotes",
+    year: "2025",
+    category: "Full-Stack Web App",
+    description: "Platform pengujian psikologi interaktif dengan manajemen ujian otomatis, panel admin komprehensif, dan latensi rendah berkat integrasi caching Redis.",
+    highlights: [
+      "Developed a full-stack psychological testing platform built on Laravel 11 and Filament admin dashboard.",
+      "Implemented Google OAuth authentication and reCAPTCHA protection, utilizing Redis caching to optimize database query performance and response times."
+    ],
+    tags: ["Laravel 11", "Filament PHP", "Redis", "Google OAuth", "reCAPTCHA", "MySQL"],
+    image: "", // Contoh: "/images/psikotes.png"
+    link: "", // Isi URL Live Demo jika tersedia
+    github: "https://github.com/dimasim"
   },
   {
-    title: "E-Commerce Gadget Keren",
-    description: "Toko online responsif dengan integrasi payment gateway dan sistem keranjang belanja interaktif.",
-    tags: ["Next.js", "Stripe", "Prisma", "PostgreSQL"],
-    link: "#"
+    title: "Smart Home IoT dengan AI",
+    year: "2024",
+    category: "IoT & Mobile Application",
+    description: "Sistem monitoring efisiensi energi cerdas yang mendeteksi pola pemborosan daya dan anomali kelistrikan rumah secara real-time via aplikasi mobile.",
+    highlights: [
+      "Designed an IoT energy monitoring system using K-Means clustering algorithm to detect electrical waste patterns and power usage anomalies.",
+      "Built a cross-platform mobile application with Flutter for real-time device control and telemetry monitoring."
+    ],
+    tags: ["IoT", "K-Means Clustering", "Flutter", "Android", "Telemetry", "AI"],
+    image: "", // Contoh: "/images/smarthome.png"
+    link: "", // Isi URL Live Demo jika tersedia
+    github: "https://github.com/dimasim"
   }
 ];
 ---
 
-<Layout title="Dimas Irsyad Maulana | Portofolio">
+<Layout title="Dimas Irsyad Maulana | Full-Stack Web Developer & Computer Engineering">
   <Navbar />
   
   <main>
     <Hero />
     
+    <About />
+
+    <Experience />
+
     <Skills />
 
     <section id="projects" class="projects-section container animate-fade-up">
       <div class="section-header">
-        <h2>Karya <span class="text-gradient">Terbaik</span></h2>
-        <p>Beberapa proyek IT yang pernah saya kerjakan.</p>
+        <h2>Proyek <span class="text-gradient">Unggulan</span></h2>
+        <p>Implementasi nyata di bidang sistem terdistribusi, web enterprise, dan integrasi kecerdasan buatan.</p>
       </div>
       
       <div class="projects-grid">
         {projects.map(project => (
           <ProjectCard 
             title={project.title}
+            year={project.year}
+            category={project.category}
             description={project.description}
+            highlights={project.highlights}
             tags={project.tags}
+            image={project.image}
             link={project.link}
+            github={project.github}
           />
         ))}
       </div>
@@ -65,17 +101,17 @@ const projects = [
 
 <style>
   .projects-section {
-    padding: 100px 24px;
+    padding: 80px 24px;
   }
 
   .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
   }
 
   .section-header h2 {
     font-size: 2.5rem;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 
   .section-header p {
@@ -85,7 +121,8 @@ const projects = [
 
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 32px;
+    align-items: stretch;
   }
 </style>

@@ -2,14 +2,21 @@
 ---
 <nav class="navbar glass">
   <div class="container nav-container">
-    <a href="#" class="logo text-gradient">Portofolio.</a>
+    <a href="#" class="logo"><span class="text-gradient">dimasim</span><span class="logo-dot">.</span></a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#experience">Pengalaman</a></li>
+      <li><a href="#skills">Keahlian</a></li>
+      <li><a href="#projects">Proyek</a></li>
+      <li><a href="#certificates">Sertifikasi</a></li>
     </ul>
-    <a href="#contact" class="btn-outline btn-sm">Contact Me</a>
+    <div class="nav-actions">
+      <a href="/CERTIFICATE/CV dimas.pdf" download="CV_Dimas_Irsyad_Maulana.pdf" class="btn-primary btn-sm btn-cv-nav" target="_blank" rel="noopener noreferrer">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span>Unduh CV</span>
+      </a>
+      <a href="#contact" class="btn-outline btn-sm nav-contact-btn">Hubungi Saya</a>
+    </div>
   </div>
 </nav>
 
@@ -22,8 +29,21 @@
     width: 90%;
     max-width: 1200px;
     z-index: 1000;
-    padding: 16px 24px;
+    padding: 14px 24px;
     border-radius: 9999px; /* Pill shape */
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar.scrolled {
+    top: 12px;
+    padding: 10px 24px;
+    background: rgba(15, 23, 42, 0.92);
+    border-color: rgba(14, 165, 233, 0.35);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(14, 165, 233, 0.2);
   }
 
   .nav-container {
@@ -36,27 +56,80 @@
   .logo {
     font-size: 1.5rem;
     font-weight: 700;
+    transition: transform 0.3s ease;
+  }
+
+  .logo:hover {
+    transform: scale(1.03);
+  }
+
+  .logo-dot {
+    color: var(--accent-purple);
   }
 
   .nav-links {
     display: flex;
-    gap: 32px;
+    gap: 12px;
     list-style: none;
+    align-items: center;
   }
 
   .nav-links a {
+    position: relative;
     font-weight: 500;
+    font-size: 0.9rem;
     color: var(--text-muted);
-    transition: color 0.3s ease;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-block;
   }
 
   .nav-links a:hover {
     color: var(--accent-neon);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  /* Status Aktif / Hidup Menyala Terang Saat Scroll */
+  .nav-links a.active,
+  .nav-contact-btn.active {
+    color: #0ea5e9 !important;
+    font-weight: 700 !important;
+    background: rgba(14, 165, 233, 0.2) !important;
+    border-color: rgba(14, 165, 233, 0.5) !important;
+    box-shadow: 0 0 16px rgba(14, 165, 233, 0.45) !important;
+    text-shadow: 0 0 10px rgba(14, 165, 233, 0.8) !important;
+  }
+
+  .nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 3px;
+    background: linear-gradient(90deg, #0ea5e9, #8b5cf6);
+    border-radius: 9999px;
+    box-shadow: 0 0 10px #0ea5e9;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .btn-cv-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 14px rgba(14, 165, 233, 0.3);
   }
 
   .btn-sm {
-    padding: 8px 20px;
-    font-size: 0.9rem;
+    padding: 8px 18px;
+    font-size: 0.85rem;
   }
 
   @media (max-width: 768px) {
@@ -65,3 +138,60 @@
     }
   }
 </style>
+
+<script>
+  function initScrollspy() {
+    const navbar = document.querySelector('.navbar');
+    const allNavItems = document.querySelectorAll('.nav-links a, .nav-contact-btn');
+    const sections = document.querySelectorAll('section[id], footer[id]');
+
+    function handleScroll() {
+      // 1. Ubah tampilan navbar saat scroll down
+      if (window.scrollY > 40) {
+        navbar?.classList.add('scrolled');
+      } else {
+        navbar?.classList.remove('scrolled');
+      }
+
+      // 2. Deteksi seksi aktif yang berada di layar menggunakan getBoundingClientRect
+      const triggerY = window.innerHeight * 0.35; // 35% dari atas viewport
+      let currentSectionId = '';
+
+      if (window.scrollY < 150) {
+        currentSectionId = '';
+      } else {
+        sections.forEach((section) => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= triggerY && rect.bottom >= triggerY) {
+            currentSectionId = section.getAttribute('id') || '';
+          }
+        });
+      }
+
+      // Deteksi jika pengguna telah menggeser hingga ke paling bawah halaman
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 60) {
+        currentSectionId = 'contact';
+      }
+
+      // 3. Berikan kelas 'active' ke item navbar yang sesuai dengan seksi aktif
+      allNavItems.forEach((item) => {
+        const href = item.getAttribute('href');
+        if (href === `#${currentSectionId}`) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+    handleScroll();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScrollspy);
+  } else {
+    initScrollspy();
+  }
+</script>

@@ -1,22 +1,77 @@
 ---
 const certificates = [
   {
-    title: "Google IT Support Professional Certificate",
-    issuer: "Google (Coursera)",
-    date: "2025",
-    credentialUrl: "#"
+    title: "MTCNA (MikroTik Certified Network Associate)",
+    issuer: "MikroTik",
+    date: "Februari 2026",
+    category: "Networking",
+    icon: "🌐",
+    credentialUrl: "/CERTIFICATE/MTCNA.pdf"
   },
   {
-    title: "Responsive Web Design",
-    issuer: "freeCodeCamp",
-    date: "2025",
-    credentialUrl: "#"
+    title: "TEPPS (English Proficiency Test)",
+    issuer: "TEPPS Assessment",
+    date: "April 2026",
+    score: "Skor: 760 / 990",
+    category: "Language",
+    icon: "📜",
+    credentialUrl: "/CERTIFICATE/toeic.pdf"
   },
   {
-    title: "Astro Front-End Developer Specialist",
-    issuer: "Astro Academy",
-    date: "2026",
-    credentialUrl: "#"
+    title: "Big Data Analyst Associate",
+    issuer: "SOLUSI247",
+    date: "Agustus 2025",
+    category: "Data & Analytics",
+    icon: "📊",
+    credentialUrl: "/CERTIFICATE/SCA511-2306-2508012338-Dimas Irsyad Maulana.pdf"
+  },
+  {
+    title: "Ethical Hacker",
+    issuer: "Cisco Networking Academy (Universitas Indonesia)",
+    date: "Juni 2024",
+    category: "Cybersecurity",
+    icon: "🛡️",
+    credentialUrl: "/CERTIFICATE/Ethical_Hacker_certificate_officialdimasim-gmail-com_30f44eb4-8f75-4344-a3c2-f06cbe2aa446.pdf"
+  },
+  {
+    title: "Full-Stack Web Developer Intern",
+    issuer: "PT Nore Inovasi",
+    date: "Desember 2025",
+    category: "Internship",
+    icon: "🚀",
+    credentialUrl: "/CERTIFICATE/43322006_Sertifikat Magang_Dimas Irsyad Maulana_TI-4A.jpeg"
+  },
+  {
+    title: "Database Programming with SQL",
+    issuer: "Oracle Academy",
+    date: "Juli 2023",
+    category: "Database",
+    icon: "🗄️",
+    credentialUrl: "/CERTIFICATE/Database Programming with SQL _Oracle.pdf"
+  },
+  {
+    title: "Database Design",
+    issuer: "Oracle Academy",
+    date: "Mei 2023",
+    category: "Database",
+    icon: "📐",
+    credentialUrl: "/CERTIFICATE/DATABASE DESIGN_ORACLE.pdf"
+  },
+  {
+    title: "CCNA: Switching, Routing & Wireless Essentials",
+    issuer: "Cisco Networking Academy",
+    date: "Juli 2021",
+    category: "Networking",
+    icon: "🔌",
+    credentialUrl: "/CERTIFICATE/CCNA-_Switching-_Routing-_and_Wireless_Essentials_certificate_officialdimasim-gmail-com_1a46ae5e-d50f-4f41-a66d-7fea70a359b0.pdf"
+  },
+  {
+    title: "IT Essentials: PC Hardware and Software",
+    issuer: "Cisco Networking Academy",
+    date: "September 2019",
+    category: "IT Infrastructure",
+    icon: "💻",
+    credentialUrl: "/CERTIFICATE/IT_Essentials_certificate_officialdimasim-gmail-com_00b4f034-e0b3-4b9a-88db-ae51a02b5a74.pdf"
   }
 ];
 ---
@@ -24,37 +79,60 @@ const certificates = [
 <section id="certificates" class="certificates-section container animate-fade-up">
   <div class="section-header">
     <h2>Sertifikasi & <span class="text-gradient">Lisensi</span></h2>
-    <p>Penghargaan dan sertifikasi profesional yang telah saya raih.</p>
+    <p>Daftar sertifikasi profesional resmi di bidang Rekayasa Perangkat Lunak, Jaringan, Database, dan Big Data.</p>
   </div>
 
   <div class="certificates-grid">
-    {certificates.map(cert => (
-      <div class="cert-card glass">
-        <div class="cert-badge">🏆</div>
-        <div class="cert-content">
-          <h3>{cert.title}</h3>
-          <p class="issuer">{cert.issuer}</p>
-          <p class="date">Diterbitkan: {cert.date}</p>
-          <a href={cert.credentialUrl} class="btn-outline btn-sm mt-4" target="_blank" rel="noopener noreferrer">Lihat Kredensial</a>
+    {certificates.map(cert => {
+      const hasUrl = Boolean(cert.credentialUrl && cert.credentialUrl !== "#");
+      return (
+        <div class="cert-card glass">
+          <div class="cert-top">
+            <div class="cert-badge">{cert.icon}</div>
+            <span class="cert-category">{cert.category}</span>
+          </div>
+          
+          <div class="cert-content">
+            <h3>{cert.title}</h3>
+            <p class="issuer">{cert.issuer}</p>
+            
+            {cert.score && (
+              <div class="score-badge">
+                <span>🎯 {cert.score}</span>
+              </div>
+            )}
+
+            <div class="cert-footer">
+              <span class="date">📅 {cert.date}</span>
+              
+              {hasUrl ? (
+                <a href={cert.credentialUrl} class="btn-outline btn-xs" target="_blank" rel="noopener noreferrer">
+                  Lihat Sertifikat ↗
+                </a>
+              ) : (
+                <span class="verified-tag">✓ Terverifikasi</span>
+              )}
+            </div>
+          </div>
         </div>
-      </div>
-    ))}
+      );
+    })}
   </div>
 </section>
 
 <style>
   .certificates-section {
-    padding: 100px 24px;
+    padding: 80px 24px;
   }
 
   .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
   }
 
   .section-header h2 {
     font-size: 2.5rem;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 
   .section-header p {
@@ -64,53 +142,104 @@ const certificates = [
 
   .certificates-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
   }
 
   .cert-card {
     display: flex;
-    gap: 20px;
-    padding: 32px;
-    align-items: flex-start;
-    transition: all 0.3s ease;
+    flex-direction: column;
+    padding: 24px;
+    border-radius: 18px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   }
 
   .cert-card:hover {
     transform: translateY(-5px);
     border-color: var(--accent-neon);
-    box-shadow: 0 10px 30px -10px var(--accent-neon);
+    box-shadow: 0 12px 30px -10px rgba(14, 165, 233, 0.25);
+  }
+
+  .cert-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
   }
 
   .cert-badge {
-    font-size: 2.5rem;
+    font-size: 2rem;
     line-height: 1;
   }
 
+  .cert-category {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    background: rgba(139, 92, 246, 0.12);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    color: var(--accent-purple);
+    font-weight: 600;
+  }
+
+  .cert-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
   .cert-content h3 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     margin-bottom: 8px;
     color: #fff;
+    line-height: 1.35;
   }
 
   .issuer {
     color: var(--accent-neon);
     font-weight: 500;
-    font-size: 0.95rem;
-    margin-bottom: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+
+  .score-badge {
+    margin-bottom: 14px;
+  }
+
+  .score-badge span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    padding: 3px 10px;
+    border-radius: 6px;
+    display: inline-block;
+  }
+
+  .cert-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .date {
     color: var(--text-muted);
-    font-size: 0.85rem;
-    margin-bottom: 16px;
+    font-size: 0.8rem;
   }
 
-  .btn-sm {
-    padding: 6px 14px;
-    font-size: 0.85rem;
-    text-align: center;
-    width: max-content;
-    display: inline-block;
+  .verified-tag {
+    font-size: 0.75rem;
+    color: var(--accent-neon);
+    font-weight: 500;
+  }
+
+  .btn-xs {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: 6px;
   }
 </style>
